@@ -11,8 +11,8 @@
 --| ---------------------------------------------------------------------------
 --|
 --| FILENAME      : halfAdder.vhd
---| AUTHOR(S)     : Capt Warner
---| CREATED       : 01/17/2017
+--| AUTHOR(S)     : Jana Algharaibeh
+--| CREATED       : 01/26/2024
 --| DESCRIPTION   : This file implements a one bit half adder.
 --|
 --| DOCUMENTATION : None
@@ -56,7 +56,8 @@ entity halfAdder is
   port(
 	i_A     : in  std_logic; -- 1-bit input port
 	i_B     : in  std_logic; 
-	o_S     : out std_logic  -- 1-bit output port
+	o_S     : out std_logic;
+	o_Cout  : out std_logic  -- 1-bit output port
 							 -- (NOTE: NO semicolon on LAST port only!)
 	-- TODO:  Carry port
   ); -- the semicolon is here instead
@@ -70,6 +71,7 @@ begin
 
 	-- *concurrent* signal assignments
 	o_S    <= i_A xor i_B;
+	o_Cout <= i_A AND i_B;
 	-- TODO:  Carry signal assignment
 	
 end halfAdder_arch;
